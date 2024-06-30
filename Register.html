@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiketopia.com - Gabut di Rumah? Tiketopia Solusinya</title>
+    <link rel="icon" href="plane.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="slide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <style>
+      .logapp a {
+        background-color: white;
+        width: 50px;
+        height: 50px;
+        border: 1px solid;
+        padding: 5px 5px 5px 5px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media screen and (max-width: 800px) {
+        .bag-kiri {
+          display: none;
+        }
+        .bag-kanan {
+          width: 100%;
+        }
+      }
+      @media screen and (min-width: 801px) {
+        .bag-kanan {
+          width: 60%;
+        }
+      }
+    </style>
+  </head>
+  <body style="display: flex; overflow: hidden; font-family: 'Poppins'">
+    <div
+      class="relative flex justify-center bag-kiri"
+      style="width: 40%; height: 100vh"
+    >
+      <div
+        class="relative flex flex-col text-center"
+        style="top: 31%; gap: 10px; align-items: center"
+      >
+        <a
+          href="index.html"
+          style="font-size: xx-large; display: flex; font-weight: bolder"
+        >
+          <div style="display: flex; flex-direction: row; font-weight: bold">
+            <p style="color: #0064d2">TIKET</p>
+            <p style="color: #2f2f2f">OPIA</p>
+            <p style="color: #fede00">.</p>
+          </div>
+        </a>
+        <div style="width: 2px; height: 30px"></div>
+        <h1 class="text-2xl font-normal" style="font-size: xx-large">
+          Solusi Jalan-Jalan
+        </h1>
+        <h5>untuk kamu yang mageran</h5>
+      </div>
+    </div>
+    <div
+      class="relative flex justify-center bag-kanan"
+      style="height: 100vh; background-color: aliceblue"
+    >
+      <div class="relative flex flex-col" style="top: 30%; gap: 10px">
+        <div class="flex items-center justify-center">
+          <div style="width: 80%">
+            <h1 class="font-bold" style="font-size: 35px">Daftar</h1>
+          </div>
+        </div>
+        <div class="flex items-center justify-center">
+          <input
+            class="rounded-md"
+            style="width: 80%; height: 50px; border: 1px solid #ccc"
+            type="text"
+            id="fname"
+            name="username"
+            placeholder=" Nomor Ponsel atau Email"
+          />
+        </div>
+        <div class="flex items-center justify-center">
+          <a
+            href="index.html"
+            class="rounded hover:bg-blue-200 hover:text-blue-600"
+            style="
+              background-color: #0064d2;
+              padding: 7px 15px;
+              color: #f7f7f7;
+              font-weight: bold;
+              width: 100px;
+              text-align: center;
+            "
+          >
+            Daftar
+          </a>
+        </div>
+        <div
+          class="relative flex items-center justify-center"
+          style="gap: 10px"
+        >
+          <div style="height: 1px; width: 80px; background: BLACK"></div>
+          <p style="color: black">atau gunakan akun</p>
+          <div style="height: 1px; width: 80px; background: BLACK"></div>
+        </div>
+        <div class="flex items-center justify-center gap-2 logapp">
+          <a href=""
+            ><img height="95%" src="logo/104490_apple_icon.png" alt=""
+          /></a>
+          <a href=""
+            ><img src="logo/7123025_logo_google_g_icon.png" alt=""
+          /></a>
+          <a href=""
+            ><img
+              style="height: 90%"
+              src="logo/3225194_app_facebook_logo_media_popular_icon.png"
+              alt=""
+          /></a>
+        </div>
+
+        <p class="text-center" style="font-size: 12px">
+          Dengan membuat akun kamu menyetujui Syarat & Ketentuan <br />
+          dan Kebijakan Privasi kami
+        </p>
+        <div
+          class="flex items-center justify-center text-center"
+          style="gap: 5px"
+        >
+          <p style="color: black">Udah punya akun?</p>
+          <a href="Login.html" style="color: #0064d2">Login aja!</a>
+        </div>
+      </div>
+      <!-- <input style="width: 50%;height:50px;margin-left:auto;margin-right:auto" type="text" id="fname" name="username" placeholder="Nomor Ponsel atau Email"> -->
+      <div
+        class="absolute"
+        style="width: 50px; height: 50px; top: 10px; right: 10px; opacity: 75%"
+      >
+        <a href="index.html"
+          ><img src="logo/8666736_x_circle_icon.png" alt=""
+        /></a>
+      </div>
+    </div>
+  </body>
+</html>

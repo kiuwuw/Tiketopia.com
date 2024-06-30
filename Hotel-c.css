@@ -1,0 +1,28 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 1 big box and 4 mini boxes */
+    gap: 10px; /* Adjust the gap as needed */
+  }
+  
+  .big-box {
+    grid-column: 1 / 2; /* Span 1 column (from column 1 to column 2) */
+    background-color: #3498db;
+    padding: 20px;
+    color: white;
+  }
+  
+  .mini-box {
+    background-color: #e74c3c;
+    padding: 10px;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* Change to a single column on mobile */
+    }
+  
+    .big-box {
+      grid-column: 1 / -1; /* Span across all columns on mobile */
+    }
+  }

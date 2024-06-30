@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIKETOPIA.COM</title>
+    <link
+            rel="icon"
+            href=
+"plane.png"
+            type="image/x-icon"
+        />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<!-- 
+    kuning = fede00 
+    biru   = 0064d2
+    -->
+
+    
+<style>
+    @media screen and (max-width : 600px) {
+        nav div div img{
+            display: none;
+        }
+        body{
+            width: 100vw;
+        }
+        .content{
+            width: 100vw;
+        }
+    }
+    @media screen and (max-width : 1200px) and (min-width :601px) {
+        nav div div.menu{
+            width: 100vw;
+            padding: 0px 10px 0px 10px;
+        }
+        body{
+            width: 100vw;
+        }
+        .content{
+            width: 100vw;
+        }
+
+    }
+    @media screen and (min-width: 1200px){
+        nav div div.menu{
+            width: 1200px;
+        }
+
+    }
+    .gambar{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    @media screen and (min-width : 800px){
+
+        .carousel-inner{
+            display: flex;
+        }
+    
+    
+        .carousel-item{
+            display: block;
+            margin-right: 20px;
+            flex: 0 0 calc(100%/3);
+            height: 100%;
+        }
+    }
+    .section-card {
+        display: grid;
+        grid-template-rows: repeat(3, 1 fr);
+        column-gap: 48px;
+        width: 80%;
+        margin: 60px auto;
+    
+        background-color: orangered;
+    }
+    
+    .card {
+        background-color: #fff;
+        box-shadow: 0 20px 40px rgba(0, 0 ,0 .2);
+    }
+    
+    .card__img {
+        width: 60%;
+        display: flex;
+        margin: 80px auto;
+    }
+    
+    .card__details {
+        padding: 10px 0;
+    }
+    
+    .card__details ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 60%;
+        padding: 20px 0;
+    }
+    
+    .card__details ul li {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        padding: 12px 0;
+    }
+    
+    .card__details ul li:not(:last-child){
+        border-bottom: 1px solid #bbb;
+    }
+    
+    /* button */
+    
+    .btn {
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        color: #eee;
+        font-weight: 500;
+    
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 100px;
+        margin-left: 50%;
+        transform: translatex(-50%);
+        margin-bottom: 30px;
+    }
+    
+    .card-1 .btn{ 
+        background-color: #CD051D;
+    }
+    .card-2 .btn{
+        background-color: #D38000;
+    }
+    .card-3 .btn{
+        background-color: #79A424;
+    }
+    
+    /* popup */
+    
+    .popup {
+        width: 100%;
+        height: 100vh;
+        box-shadow: 0 20px 40px rgba(0, 0 ,0 .8);
+        position: fixed;
+        top: 0;
+        left: 0;
+    
+        opacity: 0;
+        visibility: hidden;
+    
+        transition: all .3s;
+    }
+    
+    .popup__content {
+        width: 220%;
+        background-color: #fff;
+        box-shadow: 0 20px 40px rgba(0, 0 ,0 .2);
+    
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(.25);
+        opacity: 0;
+    
+        transition: all .5s .1s;
+    }
+    
+    .popup__img {
+        display: flex;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .popup__img img {
+        display: block;
+        width: 33.3333%;
+    }
+    
+    .popup__header {
+        text-align: center;
+        text-transform: uppercase;
+        color: #555;
+        margin-bottom: 36px;
+    }
+    
+    .popup__header h1 {
+        font-size: 150px;
+        margin-bottom: 20px;
+    }
+    
+    .popup__header h2 {
+        font-size: 100px;
+    }
+    
+    .popup__text {
+        margin-top: 20px;
+        padding: 0 36px;
+        font-size: 60px;
+        line-height: 1.4;
+    }
+    
+    .popup__text :not(:last-child){
+        margin-bottom: 16px;
+    }
+    
+    .popup__btn {
+    }
+    
+    #popup:target {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    #popup:target .popup__content{
+        opacity: 1;
+        transform: transform translate(-50%, -50%) scale(1);
+    }
+    
+    .popup__close:link,
+    .popup__close:visited {
+        position: absolute;
+        top: 12px;
+        right: 40px;
+        text-decoration: none;
+        color: #000;
+        font-size: 150px;
+        display: inline-block;
+        line-height: 1;
+        transition: all .3s;
+    }
+    .popup__close:hover,
+    .popup__close:active {
+        color: #555;
+    }
+</style>
+
+
+<body class="relative" style="font-family:'Poppins'; background-color : white ; display :block; margin:auto ;scroll-behavior: smooth;">
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+    <!-- navigasi atau header -->
+    <nav class="z-10 flex flex-col items-center justify-center p-4 shadow-lg navbar" style="background-color: white; color : #2f2f2f ; position : sticky ; gap:20px ; top : 0% ; width : 100vw">
+        <!-- <div class="relative " style="background-color: white; height : 40vh ; overflow:hidden ; position:relative ; display: flex ; justify-content :center ; align-items : center">
+            <img src="img/hdr_landscape_7-wallpaper-2560x1600.jpg" alt="bali" style="flex-srink:0;min-width: 100%;min-height: 100% ; opacity : 80%">
+        </div> -->
+        <div class="relative flex flex-col" >
+
+            <div class="flex flex-row items-center justify-between menu" style="background-color : white ">
+                <a href="index.html" style="font-size:xx-large;display:flex;font-weight:bolder">
+                    <div style="display:flex;flex-direction:row;font-weight:bold">
+                        <p style="color: #0064d2;">TIKET </p>
+                        <p style="color: #2f2f2f;">OPIA </p>
+                        <p style="color: #fede00;" > . </p>
+
+                    </div>
+                </a>
+
+                <!-- <div class="flex logo" style="font-size: xx-large; color : #0064d2;">
+                    <span>K</span>
+                        <span>a</span>
+                        <span>r</span>
+                        <span>c</span>
+                        <span>i</span>
+                        <span>s</span>
+                        <span style="color : #fede00" >.</span>
+                        
+                        
+                        
+                </div> -->
+                <div class="flex items-center justify-end tombol" style="font-size: 14px; gap : 20px ; font-weight: light">
+                    <a href="Pesawat.html" class="font-semibold text-blue-700 ">Pesawat</a>
+                    <a href="Hotel.html" class="font-semibold hover:text-blue-700 ">Hotel</a>
+                    <a href="Login.html" class="font-semibold hover:text-blue-700 ">Masuk</a>
+                    <a href="Register.html" class="rounded hover:bg-blue-200 hover:text-blue-600" 
+                    style="background-color: #0064d2 ;padding  :7px 15px ;color : #f7f7f7;
+                    font-weight:bold;">
+                        Daftar
+                    </a>
+                
+                </div>
+                <!-- <a href="#" style="display:block;position:absolute;right:10px;">
+                    <img style="height: 30px;" src="img/menu.png" alt="">
+                </a>   -->
+                <!-- <a href="javascript:void(0);" class="icon" style="display: none;" onclick="myFunction()">
+                    <img style="height: 30px;" src="img/menu.png" alt="">
+                </a> -->
+            </div>
+            
+            <!-- <div class="flex items-center justify-between " style="font-size: 16px ;">
+                <div class="flex items-center rounded-2xl" style="background-color: #f2f2f2; width : 13vw ; height : 3vh ; ">
+                    <h1 class="relative " style="padding-left : 10px">
+                        Seaching Bar
+                    </h1>
+                </div>
+                <div class="flex justify-center"  style=" gap : 15px ; align-items : center ; ">
+                    <h1 >
+                        Pesawat
+                    </h1>
+                        <h1>
+                            Hotel
+                        </h1>
+                        <h1>
+                            To do
+                        </h1>
+                    </div> 
+                    
+                </div> -->
+            </div>
+        </nav>
+
+    <div class="flex flex-col " style="background-color : white">
+
+            <!-- foto di bawah header -->
+        <div class="flex flex-col content " style=" max-width : 1200px;margin :auto">
+
+            <div class="relative " style="height : 40vh ; overflow:hidden ; position:relative ; display: flex ; align-items : center;">
+                <!-- <div class="absolute" style="background :none">
+                    <div class="relative flex flex-col items-center shadow-lg rounded-2xl" style=" width : 350px ; height : 300px ; margin-right : 50px ">
+                            <div class="relative flex items-center rounded-md" style="background-color: #f2f2f2; width : 250px ; height : 50px ; top : 100px">
+                                <h1 class="" style="padding-left : 10px">
+                                    Posisi
+                                </h1>
+                            </div>
+                            <div class="relative flex items-center rounded-md" style="background-color: #f2f2f2; width : 250px ; height : 50px ; top : 110px">
+                                <h1 class="" style="padding-left : 10px">
+                                    Posisi
+                                </h1>
+                                
+                            </div>
+                            <a class="relative flex items-center justify-center rounded-md " style="background-color: #0064d2; width : 100px ; height : 50px ; top : 120px; color : white; font-size :medium ;font-weight : bold" href="#">Ayo Cari</a>
+                        </div>
+                    </div> -->
+                <img src="img/Pesawattt.jpg" alt="bali" style=" min-width: 100%;min-height: 100% ; opacity : 80%">
+                
+            </div>
+            
+            
+
+            <div class="relative flex flex-col" style="background-color : white; padding-top : 15px ; padding-left : 20px ; gap :5px">
+                <h1 class="font-bold" style="font-size :medium;" >
+                    Rekomendasi Penerbangan!
+                </h1>
+                <h2>
+                    Liburan gak harus jauh!
+                </h2>
+                <div class="flex mt-1" style="gap : 5px">
+                    <button class="justify-center px-2 py-1 bg-white border-gray-800 rounded-full border-blue hover:border-blue-400 hover:bg-gray-100 hover:text-blue-500" style=" border-style : solid ;  border-width : 1px ;">
+                        Bali
+                    </button> 
+                    <button class="justify-center px-2 py-1 bg-white border-gray-800 rounded-full border-blue hover:border-blue-400 hover:bg-gray-100 hover:text-blue-500" style=" border-style : solid ;  border-width : 1px ;">
+                        Jogja
+                    </button> 
+                    <button class="justify-center px-2 py-1 bg-white border-gray-800 rounded-full border-blue hover:border-blue-400 hover:bg-gray-100 hover:text-blue-500" style=" border-style : solid ;  border-width : 1px ;">
+                        Jakarta
+                    </button> 
+
+    
+                </div>
+
+                <!-- <div id="carouselExampleControls" style="width : 100%" class="carousel" data-bs-ride="carousel" >
+                    <button  class="absolute z-10 self-center rounded-md shadow-md prev" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style="font-weight:bold; background-color :aliceblue ; padding : 10px 20px; color : #0064d2; left:0%; top : 40%;">
+                        <h1> < </h1>
+                    </button>
+                    <button  class="absolute z-10 self-center rounded-md shadow-md next" style="font-weight:bold; background-color :aliceblue ; padding : 10px 20px; color : #0064d2; right:0%; top : 40%"
+                    type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <h1> > </h1>
+                    </button>
+
+            </div> -->
+
+            <br>
+            <div class="relative swiper mySwiper caraousel" style="max-width: 1160px;height: 350px ;left : 0px;padding: 10px 10px 10px 10px">
+                <div class="shadow-sm swiper-wrapper"  >
+                    <div class="flex swiper-slide" style="overflow: hidden;">
+                        <div style="height: 40%;">  
+                            <img src="img/Pantai Kuta.webp" alt="Hotel Basko" >
+                        </div>
+                        <div style="text-align : left;padding : 10px 10px">
+                            <h1 class="font-bold " >Pantai Kuta</h1>
+                            <p style="font-size:medium;">Kota Denpasar, Bali</p>
+                            <br>
+                        </div>
+                        <a href="#popup" class="relative rounded-md "
+                        style="font-weight:bold; background-color :#0064D2 ; padding : 10px 20px; color : aliceblue;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">Lebih Lanjut</a>
+                    </div>
+                    <div class="flex swiper-slide" style="overflow: hidden;">
+                        <div style="height: 40%;">  
+                            <img src="img/raja ampat.jpeg" alt="Hotel Basko" >
+                        </div>
+                        <div style="text-align : left;padding : 10px 10px">
+                            <h1 class="font-bold " >Raja Ampat</h1>
+                            <p style="font-size:medium;">Kota Sorong, Papua Barat</p>
+                            <br>
+                        </div>
+                        <a href="#popup" class="relative rounded-md "
+                        style="font-weight:bold; background-color :#0064D2 ; padding : 10px 20px; color : aliceblue;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">Lebih Lanjut</a>
+                    </div>
+                    <div class="flex swiper-slide" style="overflow: hidden;">
+                        <div style="height: 40%;">  
+                            <img src="img/Nol-KM-Jogja-min.jpg" alt="Hotel Basko" >
+                        </div>
+                        <div style="text-align : left;padding : 10px 10px">
+                            <h1 class="font-bold " >Titik 0 Jogja</h1>
+                            <p style="font-size:medium;">Daerah Istimewa Yogyakarta</p>
+                            <br>
+                        </div>
+                        <a href="#popup" class="relative rounded-md "
+                        style="font-weight:bold; background-color :#0064D2 ; padding : 10px 20px; color : aliceblue;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">Lebih Lanjut</a>
+                    </div>
+                    <div class="flex swiper-slide" style="overflow: hidden;">
+                        <div style="height: 40%;">  
+                            <img src="img/Bromo.jpg" alt="Hotel Basko" >
+                        </div>
+                        <div style="text-align : left;padding : 10px 10px">
+                            <h1 class="font-bold " >Gunung Bromo</h1>
+                            <p style="font-size:medium;">Bromo, Jawa Timur</p>
+                            <br>
+                        </div>
+                        <a href="#popup" class="relative rounded-md "
+                        style="font-weight:bold; background-color :#0064D2 ; padding : 10px 20px; color : aliceblue;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">Lebih Lanjut</a>
+                    </div>
+                    <div class="flex swiper-slide" style="overflow: hidden;">
+                        <div style="height: 40%;">  
+                            <img src="img/Kelok 9.jpeg" alt="Hotel Whiz" >
+                        </div>
+                        <div style="text-align : left;padding : 10px 10px">
+                            <h1 class="font-bold " >Kelok Sembilan</h1>
+                            <p style="font-size:medium;">Payakumbuh, Sumatera Barat</p>
+                            <br>
+                        </div>
+                        <a href="#popup" class="relative rounded-md "
+                        style="font-weight:bold; background-color :#0064D2 ; padding : 10px 20px; color : aliceblue;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">Lebih Lanjut</a>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <br>
+            <div class="relative self-center rounded-md shadow-md" style="font-weight:bold; background-color :aliceblue ; padding : 10px 20px; color : #0064d2 ;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">
+                <h1>Lihat Semua</h1>
+            </div>
+            <br>    
+        </div>     
+        <footer class="flex flex-col items-center justify-center">
+            <p>© 2024 Tiketopia.com Tiket Network . All Rights Reserved.</p>
+        </footer>  
+    
+    </div>
+    <div class="popup" id="popup" style="z-index: 10;font-family:'Poppins'">
+        <div class="popup__content" style="z-index: 2;display:flex;flex-direction:column;justify-content:center;align-items:center">
+
+            <div class="popup__img">
+                <img src="img/red.jpg">
+                <img src="img/yellow.jpg">
+                <img src="img/green.jpg">
+                <a href="#" class="popup__close">&times;</a>
+            </div>
+            <div class="p-3 popup__header">
+                <h1>Ayo booking di Tiketopia!</h1>
+                <h2>Baca dulu yaa sebelum beli</h2>
+                <h3>S&k</h3>
+            </div>
+            <div class="popup__text" style="text-align: justify;width:55%;" >
+                <p>
+                    Haloo gess David di sini, eh Tiketopia.
+                    Jadi gini sebelum bayar ni ya. 
+                </p>
+                <p>
+                    Check dulu jadwal nya udah sesuai apa belom. ga bisa di cancel lo ini.
+                </p>
+                <p>
+                    Becanda bisa kok di cancel, tapi duit ga balek semua. 
+                </p>
+                <p>Hoo iya pesawat nya bagus
+                    tenang aja, percaya aja sama kami.
+                </p>
+                <p>
+                    Kalau tertarik bisa langsung pesen aja.
+                </p>
+            </div>
+            <br>
+            <a href="Register.html" class="relative rounded-xl btn popup__btn text-7xl"
+            style="z-index:11;font-weight:bold; background-color :#0064D2 ; padding : 50px 50px; color : aliceblue;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">Pesan Sekarang!</a>
+        </div>
+        <div class="overlay" style="width: 100vw;height:100vh;background-color:black;opacity:75%"></div>
+    </div>
+    
+
+    </body>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            // Responsive breakpoints
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                800: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                }
+            },
+            freeMode: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+
+    <script src="index.js"></script>
+
+</html>

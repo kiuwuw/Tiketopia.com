@@ -1,0 +1,34 @@
+html{
+    overflow-x: hidden;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    }
+
+
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 50px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+        /* width: 100%; or another relative value */
+    box-sizing: border-box;
+    
+}
