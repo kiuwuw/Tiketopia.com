@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIKETOPIA.COM</title>
+    <link
+            rel="icon"
+            href=
+"plane.png"
+            type="image/x-icon"
+        />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="popUP.css">
+    <style>
+
+    </style>
+</head>
+<!-- 
+    kuning = fede00 
+    biru   = 0064d2
+    -->
+
+    
+<style>
+    @media screen and (max-width : 800px) {
+        .harga{
+            flex-direction: column;
+        }
+        .beli{
+            align-items: start;
+        }
+    }
+
+
+    @media screen and (max-width : 600px) {
+        nav div div img{
+            display: none;
+        }
+        body{
+            width: 100vw;
+        }
+        .content{
+            width: 100vw;
+        }
+    }
+    @media screen and (max-width : 1200px) and (min-width :601px) {
+        nav div div.menu{
+            width: 100vw;
+            padding: 0px 10px 0px 10px;
+        }
+        body{
+            width: 100vw;
+        }
+        .content{
+            width: 100vw;
+        }
+
+    }
+    @media screen and (min-width: 1200px){
+        nav div div.menu{
+            width: 1200px;
+        }
+
+    }
+    .gambar{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    @media screen and (min-width : 800px){
+
+        .carousel-inner{
+            display: flex;
+        }
+    
+    
+        .carousel-item{
+            display: block;
+            margin-right: 20px;
+            flex: 0 0 calc(100%/3);
+            height: 100%;
+        }
+    }
+
+
+</style>
+
+
+<body class="relative" style="font-family:'Poppins'; background-color : white ; display :block; margin:auto ;scroll-behavior: smooth;">
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+    <!-- navigasi atau header -->
+    <nav class="z-10 flex flex-col items-center justify-center p-4 shadow-lg navbar" style="background-color: white; color : #2f2f2f ; position : sticky ; gap:20px ; top : 0% ; width : 100vw">
+        <!-- <div class="relative " style="background-color: white; height : 40vh ; overflow:hidden ; position:relative ; display: flex ; justify-content :center ; align-items : center">
+            <img src="img/hdr_landscape_7-wallpaper-2560x1600.jpg" alt="bali" style="flex-srink:0;min-width: 100%;min-height: 100% ; opacity : 80%">
+        </div> -->
+        <div class="relative flex flex-col" >
+
+            <div class="flex flex-row items-center justify-between menu" style="background-color : white ">
+                <a href="index.html" style="font-size:xx-large;display:flex;font-weight:bolder">
+                    <div style="display:flex;flex-direction:row;font-weight:bold">
+                        <p style="color: #0064d2;">TIKET </p>
+                        <p style="color: #2f2f2f;">OPIA </p>
+                        <p style="color: #fede00;" > . </p>
+
+                    </div>
+                </a>
+                <!-- <div class="flex logo" style="font-size: xx-large; color : #0064d2;">
+                    <span>K</span>
+                        <span>a</span>
+                        <span>r</span>
+                        <span>c</span>
+                        <span>i</span>
+                        <span>s</span>
+                        <span style="color : #fede00" >.</span>
+                        
+                        
+                        
+                </div> -->
+                <div class="flex items-center justify-end tombol" style="font-size: 14px; gap : 20px ; font-weight: light">
+                    <a href="Pesawat.html" class="font-semibold hover:text-blue-700 ">Pesawat</a>
+                    <a href="Hotel.html" class="font-semibold hover:text-blue-700 ">Hotel</a>
+                    <a href="Login.html" class="font-semibold hover:text-blue-700 ">Masuk</a>
+                    <a href="Register.html" class="rounded hover:bg-blue-200 hover:text-blue-600" 
+                    style="background-color: #0064d2 ;padding  :7px 15px ;color : #f7f7f7;
+                    font-weight:bold;">
+                        Daftar
+                    </a>
+
+                
+                </div>
+                <!-- <a href="#" style="display:block;position:absolute;right:10px;">
+                    <img style="height: 30px;" src="img/menu.png" alt="">
+                </a>   -->
+                <!-- <a href="javascript:void(0);" class="icon" style="display: none;" onclick="myFunction()">
+                    <img style="height: 30px;" src="img/menu.png" alt="">
+                </a> -->
+            </div>
+            
+            <!-- <div class="flex items-center justify-between " style="font-size: 16px ;">
+                <div class="flex items-center rounded-2xl" style="background-color: #f2f2f2; width : 13vw ; height : 3vh ; ">
+                    <h1 class="relative " style="padding-left : 10px">
+                        Seaching Bar
+                    </h1>
+                </div>
+                <div class="flex justify-center"  style=" gap : 15px ; align-items : center ; ">
+                    <h1 >
+                        Pesawat
+                    </h1>
+                        <h1>
+                            Hotel
+                        </h1>
+                        <h1>
+                            To do
+                        </h1>
+                    </div> 
+                    
+                </div> -->
+            </div>
+        </nav>
+
+    <div class="flex flex-col " style="background-color : white">
+
+            <!-- foto di bawah header -->
+        <div class="flex flex-col content " style=" max-width : 1200px;margin :auto">
+
+            <div class="relative " style="background-color: black; height : 40vh ; overflow:hidden ; position:relative ; display: flex ; align-items : center;">
+                <div class="relative" style="z-index: 1;background-color : blue">
+                    <!-- <div class="relative flex flex-col items-center shadow-lg rounded-2xl" style="background-color: red; width : 350px ; height : 300px ; margin-right : 50px ">
+                            <div class="relative flex items-center rounded-md" style="background-color: #f2f2f2; width : 250px ; height : 50px ; top : 100px">
+                                <h1 class="" style="padding-left : 10px">
+                                    Posisi
+                                </h1>
+                            </div>
+                            <div class="relative flex items-center rounded-md" style="background-color: #f2f2f2; width : 250px ; height : 50px ; top : 110px">
+                                <h1 class="" style="padding-left : 10px">
+                                    Posisi
+                                </h1>
+                                
+                            </div>
+                            <a class="relative flex items-center justify-center rounded-md " style="background-color: #0064d2; width : 100px ; height : 50px ; top : 120px; color : white; font-size :medium ;font-weight : bold" href="#">Ayo Cari</a>
+                        </div> -->
+                    </div>
+                <img src="img/Hotel Basko.jpg" alt="bali" style="flex-shrink:100;min-width: 100%;min-height: 100% ; opacity : 80%">
+                <div>
+                    <p>
+                        i dont know 
+                        what is 
+                        happening
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div style="width: 100%;height:10px;background-color: aliceblue;"></div>
+                <div class="flex flex-row justify-between harga " style="padding: 10px 10px 10px 10px;background-color: aliceblue;">
+
+                    <div background-color: aliceblue;>
+                        <div class="flex items-center gap-2">
+                            <img src="img/star.png" style="height: 30px;" alt="">
+                            <img src="img/star.png" style="height: 30px;" alt="">
+                            <img src="img/star.png" style="height: 30px;" alt="">
+                            <img src="img/star.png" style="height: 30px;" alt="">
+                            <div style="width: 10px; height: 10px; background-color: #222222; border-radius: 50%;"></div>
+                            <p class="font-bold" style="font-size: 15px ; color : #00ae54" >Paling Viral di Bukittinggi</p>
+                            <br>
+    
+                        </div>
+                        <h1 class="font-bold " style="font-size: 38px;">
+                            Hotel Basko
+                            <br> Bukittinggi
+                        </h1>
+                    </div>
+                    <div class="flex flex-col items-end gap-4 beli">
+                        <p class="font-bold" style="font-size: 15px ; color : gray" >Mulai Dari</p>
+                        <p class="font-bold" style="font-size: 20px ; color : red" >IDR 453.000</p>
+                        <button onclick="showPopup()"class="rounded " style="background-color: #0064d2 ; padding  :7px 15px ; color : #f7f7f7; font-weight:bold">
+                            Pesan
+                        </button>
+                    
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                          <div class="modal-content" style="display:flex;flex-direction:row-reverse;align-items:center;justify-content:space-between">
+                            <span class="close" onclick="closePopup()">&times;</span>
+                            <div class="message">
+                              <i class="fas fa-check-circle fa-2x"></i>
+                              <p>Tiket Berhasil dipesan</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%;height:10px;background-color: aliceblue;"></div>
+                    <div class=" bg-slate-500" style="margin : auto;width: 99%; height:1px"></div>
+                <div  class="flex flex-row justify-between harga " style="margin: 10px 10px 10px 10px">
+                    <h1 class="font-bold " style="font-size: 38px;">
+                        Rating
+                    </h1>
+                    <div>
+                        <h2 class="font-bold " style="font-size: 38px;">
+                            4,63/5 
+                        </h2>
+                        <p> Sangat Bagus</p>
+                    </div>
+                </div>
+                <div class="flex justify-around">
+                    <div class="text-left rounded-xl" style="width: 30%; background-color:aliceblue; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);font-size : large;padding : 5px 5px 5px 5px">
+                        <p style="font-size: small;">4.5/5 Anies</p>
+                        <br>
+                        "Baru tau harus pakai KTP" 
+                    </div>
+                    <div class="text-left rounded-xl" style="width: 30%; background-color:aliceblue;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);font-size : large;padding : 5px 5px 5px 5px">
+                        <p style="font-size: small;">4.7/5 Prabowo</p>
+                        <br>
+                        "Pak anies Pak anies" 
+                    </div>
+                    <div class="text-left rounded-xl" style="width: 30%; background-color:aliceblue;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);font-size : large;padding : 5px 5px 5px 5px">
+                        <p style="font-size: small;">4.6/5 Ganjar</p>
+                        <br>"Kaisar bapak baik sekali" 
+                    </div>
+                    
+                </div>
+                <br>
+                    <div class=" bg-slate-500" style="margin : auto;width: 99%; height:1px"></div>
+                <div class="flex flex-col justify-between harga " style="padding: 10px 10px 10px 10px;background-color:aliceblue">
+                    <h1 class="font-bold " style="font-size: 38px;">
+                        Fasilitas
+                    </h1>
+                    <div class="flex flex-row justify-around p-5">
+                        <div class="text-left ">
+                            <h1>Wifi</h1>
+                            <h1>Kolam Berenang</h1>
+    
+                        </div>
+                        <div class="text-center ">
+                            <h1>Spa</h1>
+                            <h1>Restoran</h1>
+    
+                        </div>
+                        <div class="text-right ">
+                            <h1>AC</h1>
+                            <h1>Lift</h1>
+                        </div>
+                    </div>
+
+                </div>
+                <div class=" bg-slate-500" style="margin : auto;width: 99%; height:1px"></div>
+
+                <div class="flex flex-col harga " style="margin: 10px 10px 10px 10px">
+                    <div class="flex items-center justify-between" style="padding : 5px 0px 0px 5px">
+                        <h1 class="font-bold " style="font-size: 38px;">
+                            Lokasi
+                        </h1>
+                        <a href="https://maps.app.goo.gl/S4nbL3LzabnaZsF9A" style="font-size: 18px;font-weight:normal; color : #0064d2" target="_blank">
+                            Lihat Peta
+                        </a>
+
+                    </div>
+                    <br>
+                    <div class="flex justify-center" >
+                        <iframe src="https://www.google.com/maps/d/embed?mid=1IhIAzCNaGO8X3tM1AMwcK0o7qIs&hl=en_US&ehbc=2E312F" width="640" height="480"></iframe>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <h1>Jl. Hamka No.41Jorong Parak Juar, Jl. Hamka No.60, Baringin, Kec. Lima Kaum, Kabupaten Tanah Datar, Sumatera Barat 27211</h1>
+                    </div>
+
+
+                </div>
+                <br>
+                <div class=" bg-slate-500" style="margin : auto;width: 99%; height:1px"></div>
+                <div class="flex flex-col harga " style="padding: 10px 10px 10px 10px;background-color:aliceblue">
+                    <h1 class="font-bold " style="font-size: 20px;">
+                        Tentang Hotel Basko
+                    </h1>
+                    <br>
+                    <p style="text-align: justify;">Hotel bintang 4 Emersia Hotel and Resort Batusangkar menyediakan tempat menginap yang nyaman bagi kamu yang berwisata ke Batusangkar, Sumatra Barat. Fasilitas utama yang disediakan meliputi aula serbaguna dan ruang rapat untuk para wisatawan bisnis. Kamu juga dapat bersantai sejenak di taman atau di kolam renang outdoor. WiFi gratis dapat diakses di seluruh area hotel. Setiap kamar dilengkapi dengan AC, TV layar datar dengan saluran kabel, dan minibar. Di kamar mandi dalam tersedia shower, jubah mandi, sandal, dan peralatan mandi gratis. Kamar yang terletak di lantai paling atas menyajikan pemandangan Kota Batusangkar yang memesona. Untuk pilihan sajian, tamu dapat menikmati hidangan khas Indonesia dan internasional di Sapphire Restaurant, atau melepas penat dengan secangkir kopi di Ruby Coffee Shop. Layanan kamar 24 jam juga tersedia untuk kenyamananmu. Setelah beraktivitas seharian, kamu yang menginap di Emersia Hotel and Resort Batusangkar dapat memesan perawatan spa di Amethyst Health Center & Spa. Selain itu, fasilitas gym juga tersedia untuk kamu yang ingin berolahraga di waktu senggang. Penyewaan sepeda juga disediakan di hotel. Kamu dapat memesan layanan antar-jemput bandara dengan biaya tambahan. Berlokasi di dekat beberapa landmark setempat, Emersia Hotel and Resort Batusangkar dapat dicapai selama 7 menit dengan berkendara dari Istano Silinduang Bulan dan 9 menit dari Istana Pagaruyung. Wisata Danau Singkarak yang populer dapat ditempuh dengan 41 menit berkendara dari hotel. Untuk menuju ke Kota Padang, tamu harus berkendara sejauh 107 km. Jarak dari hotel ke Bandara Internasional Minangkabau adalah 132 menit berkendara.</p>
+                </div>
+
+
+            </div>
+            
+            
+
+        <footer class="flex flex-col items-center justify-center">
+            <p>© 2024 Tiketopia.com Tiket Network . All Rights Reserved.</p>
+        </footer>  
+    
+    </div>
+    
+
+    </body>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        function showPopup() {
+          document.getElementById("myModal").style.display = "block";
+        }
+  
+        function closePopup() {
+          document.getElementById("myModal").style.display = "none";
+        }
+  
+        window.onclick = function (event) {
+          if (event.target == document.getElementById("myModal")) {
+            closePopup();
+          }
+        };
+      </script>
+
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            // Responsive breakpoints
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                600: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                }
+            },
+            freeMode: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+
+    <script src="index.js"></script>
+
+</html>
